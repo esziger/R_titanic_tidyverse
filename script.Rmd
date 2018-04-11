@@ -116,6 +116,8 @@ test  <- read_csv('input/test.csv')
 ```
 
 We are using *readr*'s *read\_csv* function to read in the data sets, instead of the default *read.csv*. This helps to make our data work a bit better with *dplyr* and friends (and computes a bit faster, although not as fast as *fread* which you want to use for really large files.)
+Modify Survived, PClass,Embarked and Sex to become factors(a categorical variable).
+Conceptually, factors are variables in R which take on a limited number of different values; such variables are often refered to as categorical variables. One of the most important uses of factors is in statistical modeling; since categorical variables enter into statistical models differently than continuous variables, storing data as factors insures that the modeling functions will treat such data correctly.
 
 ```{r, message=FALSE, warning=FALSE, comment=FALSE}
 train <- train %>% mutate(
